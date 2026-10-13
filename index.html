@@ -35,10 +35,10 @@ h1{font-family:Impact,"Arial Black",sans-serif;font-size:clamp(28px,7vw,52px);ma
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style></head><body><div class="wrap">
 <div id="start" class="center">
- <h1>🎯 If I Were... Match!</h1>
+ <h1>🎯 If I Were... Match! <small style="font-size:.4em;display:block;color:#5bc0ff">Challenge Level</small></h1>
  <div style="font-size:64px">🎰 🐦 🚀 👻</div>
  <p>Match each <b>If-clause (1–4)</b> with the correct <b>result (a–d)</b>.<br>5 rounds · 4 pairs each · 30 seconds per pair · 100 points for every correct match!</p>
- <p>Tap a number, then tap a letter. Second conditional = <b>If + past simple, would + verb</b></p>
+ <p>Tap a number, then tap a letter. Challenge level! Watch for <b>wouldn't, could, might, were to</b> and questions. Second conditional = <b>If + past simple, would + verb</b></p>
  <button class="btn" onclick="begin()">▶ Start Game</button>
 </div>
 <div id="game" class="hide">
@@ -52,26 +52,26 @@ h1{font-family:Impact,"Arial Black",sans-serif;font-size:clamp(28px,7vw,52px);ma
 </div>
 <script>
 const D=[
-[["🎰🏠","If I won the lottery,","I would buy a big house.","We use If + past simple for an unreal, imaginary situation. 'Would + buy' shows the imaginary result."],
- ["🐦🌊","If I were a bird,","I would fly over the sea.","For 'be' in the second conditional we usually say 'were' for all subjects: If I were..."],
- ["🗣️🌍","If I could speak every language,","I would travel the world.","'Could' is a past form here. It talks about something that is not true now."],
- ["🏫🚫","If I were the principal,","I would give no homework.","I am not the principal, so it is imaginary: If I were + would + verb."]],
-[["📖💡","If I were you,","I would study harder.","'If I were you' is a common way to give advice in the second conditional."],
- ["🌧️🏠","If it rained today,","we would stay home.","If + past simple (rained), would + base verb (stay)."],
- ["🚗🏫","If she had a car,","she would drive to school.","She does not have a car now, so we use had + would drive."],
- ["🏀📏","If he were taller,","he would play basketball.","He is not taller, so it is imaginary: were + would play."]],
-[["💰🐶","If I had a million baht,","I would help animals.","'Had' (past simple) + would help. Unreal situation in the present."],
- ["🏖️🏊","If we lived near the beach,","we would swim every day.","We do not live near the beach. If + lived, would + swim."],
- ["🎮😎","If I didn't have homework,","I would play games.","A negative if-clause uses didn't + base verb: didn't have."],
- ["🤔🗣️","If they knew the answer,","they would tell us.","'Knew' is past simple, but it means they do not know it now."]],
-[["✈️🇯🇵","If I could fly,","I would visit Japan.","Could + would: both talk about imagination, not reality."],
- ["🐱🍖","If my cat could talk,","it would ask for more food.","Cats cannot talk, so we use could + would."],
- ["🚀🌕","If I were an astronaut,","I would walk on the moon.","I am not an astronaut: were + would walk."],
- ["👗🏬","If she were rich,","she would buy a fashion store.","She is not rich now. If she were... she would buy..."]],
-[["📝🏆","If he studied harder,","he would pass the test.","If + studied (past simple), would + pass. Imaginary result."],
- ["🎤📸","If I met a famous singer,","I would ask for a photo.","'Met' is past simple form. The situation is only imaginary."],
- ["⏰🏛️","If we had more time,","we would visit the museum.","We do not have more time, so: had + would visit."],
- ["👻😂","If I were invisible,","I would surprise my friends.","Nobody is invisible, so we use were + would surprise."]]];
+[["🎰📚","If I won ten million baht,","I still wouldn't stop studying.","Negative result = wouldn't + base verb. 'Still' shows a surprising result."],
+ ["🐘🗣","If animals could speak English,","zoos would be very noisy places.","Could (past form) in the if-clause + would + base verb. It is impossible in real life."],
+ ["🌞🧊","If the sun disappeared,","the Earth would freeze within days.","If + past simple (disappeared), would + freeze. A very unlikely situation."],
+ ["🕰👴","If I could go back in time,","I might meet my great-grandparents.","'Might' = a possible result (less sure than 'would')."]],
+[["💼🪙","What would you do if you found a wallet on the bus?","I would take it to the police.","Question form: What would + subject + do if + past simple? Answer: I would + verb."],
+ ["📵😴","If I were you,","I wouldn't use my phone late at night.","'If I were you' gives advice. Use were (not was) and wouldn't + verb."],
+ ["🥶🧥","If it were colder today,","we could wear our winter coats.","'Could' = ability or possibility in the result clause."],
+ ["🏫🚌","If the school bus never came,","we would have to walk to school.","'Would have to' = would + have to (an obligation in an imaginary situation)."]],
+[["🌍🌊","If sea levels rose by ten metres,","many cities would disappear.","If + rose (past simple), would + base verb. Imaginary big change."],
+ ["🔋📱","If phones had no batteries,","we couldn't use them without cables.","Negative result with couldn't = would not be able to."],
+ ["🌳🚫","If there were no trees,","we wouldn't have enough oxygen.","'If there were' is the second conditional form of 'there is/are'."],
+ ["🐝🌸","If bees disappeared,","many plants couldn't grow fruit.","Disappeared = past simple form, but the meaning is imaginary, not past."]],
+[["👽🌏","If aliens were to visit Earth,","scientists would try to communicate.","'If + were to + verb' makes an unlikely situation sound even more imaginary."],
+ ["🎓🌟","If I weren't so shy,","I would join the drama club.","Negative if-clause with be: weren't (= were not) + would + verb."],
+ ["🧪🥼","If I were a scientist,","I would look for a cure for cancer.","Not true now, so: If I were + would + base verb."],
+ ["🌙😴","If I stayed up all night,","I would fall asleep in class.","Stayed = past simple. The situation is imagined, not a habit."]],
+[["🏆😮","If our team won the final,","the whole school would celebrate.","Be careful: 'won' here is imaginary future, not past. Past simple + would."],
+ ["🔑🚪","If I lost my house key,","I would call my parents for help.","If + lost, would + call. We do not use 'will' in a second conditional."],
+ ["🍕💪","If pizza were healthy,","I would eat it every day.","Pizza is not healthy, so we use were + would eat."],
+ ["🏝📶","If I lived on a desert island,","I would miss Wi-Fi the most.","If + lived (past simple), would + base verb. Imaginary life."]]];
 const GOOD=["Excellent! 🌟","Very good! 👏","Great job! 🔥","Awesome! 🎉","Perfect! 💯"];
 const BAD=["Almost there! Just a little more! 💪","Close to the truth! You are capable, you will get the next one! 🌈","Nice try! You have the skill, keep going! ✨","So close! One more step and you've got it! 🚀"];
 let r=0,score=0,sel=null,left=0,t=0,iv=null,done=0,locked=false,order=[],ac=null,mute=false,mi=null;
@@ -88,7 +88,7 @@ function begin(){try{ac=new (window.AudioContext||window.webkitAudioContext)();a
 function round(){const set=D[r];left=4;done=0;sel=null;locked=false;t=120;
  $('rd').textContent='Round '+(r+1)+' / 5';$('sc').textContent=score;$('nx').classList.add('hide');
  $('fb').className='';$('fb').innerHTML='Pick a number first. You can do it! 💪';
- order=shuffle([0,1,2,3]);
+ do{order=shuffle([0,1,2,3])}while(order.some((o,p)=>o===p));
  $('L').innerHTML=set.map((q,i)=>`<button class="it" data-i="${i}" onclick="pickL(${i})"><b class="k">${i+1}</b><span class="pic">${q[0].slice(0,2)}</span><span>${q[1]}</span></button>`).join('');
  $('R').innerHTML=order.map((o,p)=>`<button class="it" data-o="${o}" onclick="pickR(${o})"><b class="k">${'abcd'[p]}</b><span class="pic">${[...set[o][0]].slice(1).join('')}</span><span>${set[o][2]}</span></button>`).join('');
  clearInterval(iv);tick();iv=setInterval(()=>{t--;tick();if(t<=0)timeUp()},1000)}
