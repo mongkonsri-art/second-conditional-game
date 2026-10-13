@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>If I Were... Second Conditional Match</title>
+<style>
+:root{--bg:#1d1442;--card:#2c2060;--ink:#fff;--sun:#ffd23f;--mint:#3ddc97;--coral:#ff6b6b;--sky:#5bc0ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 20% 0,#3a2a8a,var(--bg) 60%);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;min-height:100vh}
+.wrap{max-width:900px;margin:0 auto;padding:12px}
+h1{font-family:Impact,"Arial Black",sans-serif;font-size:clamp(28px,7vw,52px);margin:8px 0;color:var(--sun);letter-spacing:1px;text-align:center}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:700;font-size:18px;margin-bottom:8px}
+.pill{background:var(--card);padding:6px 14px;border-radius:99px}
+#bar{height:10px;background:#0006;border-radius:9px;overflow:hidden;margin-bottom:10px}
+#fill{height:100%;width:100%;background:var(--mint);transition:width 1s linear,background .3s}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.col h3{margin:4px 0;color:var(--sky);font-size:15px}
+.it{display:flex;align-items:center;gap:10px;width:100%;background:var(--card);color:var(--ink);border:3px solid transparent;border-radius:16px;padding:8px 10px;margin-bottom:8px;font-size:clamp(14px,3.6vw,18px);text-align:left;cursor:pointer;min-height:76px;font-family:inherit}
+.it:focus-visible{outline:3px solid var(--sun)}
+.it .pic{font-size:clamp(30px,8vw,44px);background:#0004;border-radius:12px;padding:4px 8px;flex:none}
+.it b.k{background:var(--sun);color:#1d1442;border-radius:50%;width:30px;height:30px;display:grid;place-items:center;flex:none}
+.it.sel{border-color:var(--sun);transform:scale(1.02)}
+.it.ok{border-color:var(--mint);background:#1f5a47}
+.it.no{border-color:var(--coral)}
+.it:disabled{cursor:default}
+#fb{min-height:120px;border-radius:16px;padding:12px 14px;margin-top:4px;background:var(--card);font-size:17px;line-height:1.45}
+#fb.good{background:#1f5a47}#fb.bad{background:#5a2740}
+#fb .big{font-size:24px;font-weight:800;color:var(--sun)}
+.btn{background:var(--sun);color:#1d1442;border:0;border-radius:99px;padding:12px 28px;font-size:20px;font-weight:800;cursor:pointer;margin-top:8px;font-family:inherit}
+.btn:focus-visible{outline:3px solid #fff}
+.center{text-align:center;padding:20px 8px}
+.center p{font-size:18px;line-height:1.5;max-width:560px;margin:10px auto}
+.mute{background:none;border:2px solid #fff6;color:#fff;border-radius:99px;padding:4px 12px;font-size:16px;cursor:pointer}
+.hide{display:none}
+@media (max-width:520px){.cols{gap:6px}.it{padding:6px;gap:6px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body><div class="wrap">
+<div id="start" class="center">
+ <h1>🎯 If I Were... Match!</h1>
+ <div style="font-size:64px">🎰 🐦 🚀 👻</div>
+ <p>Match each <b>If-clause (1–4)</b> with the correct <b>result (a–d)</b>.<br>5 rounds · 4 pairs each · 30 seconds per pair · 100 points for every correct match!</p>
+ <p>Tap a number, then tap a letter. Second conditional = <b>If + past simple, would + verb</b></p>
+ <button class="btn" onclick="begin()">▶ Start Game</button>
+</div>
+<div id="game" class="hide">
+ <div class="top"><span class="pill" id="rd"></span><span class="pill">⭐ <span id="sc">0</span></span><span class="pill" id="tm">2:00</span><button class="mute" id="mu" onclick="toggleMute()" aria-label="Music on/off">🔊</button></div>
+ <div id="bar"><div id="fill"></div></div>
+ <div class="cols"><div class="col"><h3>If-clauses</h3><div id="L"></div></div><div class="col"><h3>Results</h3><div id="R"></div></div></div>
+ <div id="fb" aria-live="polite">Pick a number first. You can do it! 💪</div>
+ <div style="text-align:center"><button class="btn hide" id="nx" onclick="nextRound()">Next round ➜</button></div>
+</div>
+<div id="end" class="center hide"></div>
+</div>
+<script>
+const D=[
+[["🎰🏠","If I won the lottery,","I would buy a big house.","We use If + past simple for an unreal, imaginary situation. 'Would + buy' shows the imaginary result."],
+ ["🐦🌊","If I were a bird,","I would fly over the sea.","For 'be' in the second conditional we usually say 'were' for all subjects: If I were..."],
+ ["🗣️🌍","If I could speak every language,","I would travel the world.","'Could' is a past form here. It talks about something that is not true now."],
+ ["🏫🚫","If I were the principal,","I would give no homework.","I am not the principal, so it is imaginary: If I were + would + verb."]],
+[["📖💡","If I were you,","I would study harder.","'If I were you' is a common way to give advice in the second conditional."],
+ ["🌧️🏠","If it rained today,","we would stay home.","If + past simple (rained), would + base verb (stay)."],
+ ["🚗🏫","If she had a car,","she would drive to school.","She does not have a car now, so we use had + would drive."],
+ ["🏀📏","If he were taller,","he would play basketball.","He is not taller, so it is imaginary: were + would play."]],
+[["💰🐶","If I had a million baht,","I would help animals.","'Had' (past simple) + would help. Unreal situation in the present."],
+ ["🏖️🏊","If we lived near the beach,","we would swim every day.","We do not live near the beach. If + lived, would + swim."],
+ ["🎮😎","If I didn't have homework,","I would play games.","A negative if-clause uses didn't + base verb: didn't have."],
+ ["🤔🗣️","If they knew the answer,","they would tell us.","'Knew' is past simple, but it means they do not know it now."]],
+[["✈️🇯🇵","If I could fly,","I would visit Japan.","Could + would: both talk about imagination, not reality."],
+ ["🐱🍖","If my cat could talk,","it would ask for more food.","Cats cannot talk, so we use could + would."],
+ ["🚀🌕","If I were an astronaut,","I would walk on the moon.","I am not an astronaut: were + would walk."],
+ ["👗🏬","If she were rich,","she would buy a fashion store.","She is not rich now. If she were... she would buy..."]],
+[["📝🏆","If he studied harder,","he would pass the test.","If + studied (past simple), would + pass. Imaginary result."],
+ ["🎤📸","If I met a famous singer,","I would ask for a photo.","'Met' is past simple form. The situation is only imaginary."],
+ ["⏰🏛️","If we had more time,","we would visit the museum.","We do not have more time, so: had + would visit."],
+ ["👻😂","If I were invisible,","I would surprise my friends.","Nobody is invisible, so we use were + would surprise."]]];
+const GOOD=["Excellent! 🌟","Very good! 👏","Great job! 🔥","Awesome! 🎉","Perfect! 💯"];
+const BAD=["Almost there! Just a little more! 💪","Close to the truth! You are capable, you will get the next one! 🌈","Nice try! You have the skill, keep going! ✨","So close! One more step and you've got it! 🚀"];
+let r=0,score=0,sel=null,left=0,t=0,iv=null,done=0,locked=false,order=[],ac=null,mute=false,mi=null;
+const $=id=>document.getElementById(id);
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a}
+/* sound */
+function tone(f,d,type='sine',v=.12,at=0){if(!ac||mute)return;const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(v,ac.currentTime+at);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+at+d);o.connect(g);g.connect(ac.destination);o.start(ac.currentTime+at);o.stop(ac.currentTime+at+d)}
+function music(){const n=[262,330,392,523,392,330,294,370,440,587,440,370];let i=0;mi=setInterval(()=>{if(mute)return;const f=n[i%n.length];tone(f,.18,'square',.04);if(i%4==0)tone(f/2,.3,'triangle',.07);i++},190)}
+function toggleMute(){mute=!mute;$('mu').textContent=mute?'🔇':'🔊'}
+const yay=()=>[523,659,784,1047].forEach((f,i)=>tone(f,.2,'triangle',.15,i*.08));
+const aw=()=>[392,330].forEach((f,i)=>tone(f,.3,'sine',.12,i*.15));
+function begin(){try{ac=new (window.AudioContext||window.webkitAudioContext)();ac.resume();music()}catch(e){}
+ $('start').classList.add('hide');$('game').classList.remove('hide');r=0;score=0;round()}
+function round(){const set=D[r];left=4;done=0;sel=null;locked=false;t=120;
+ $('rd').textContent='Round '+(r+1)+' / 5';$('sc').textContent=score;$('nx').classList.add('hide');
+ $('fb').className='';$('fb').innerHTML='Pick a number first. You can do it! 💪';
+ order=shuffle([0,1,2,3]);
+ $('L').innerHTML=set.map((q,i)=>`<button class="it" data-i="${i}" onclick="pickL(${i})"><b class="k">${i+1}</b><span class="pic">${q[0].slice(0,2)}</span><span>${q[1]}</span></button>`).join('');
+ $('R').innerHTML=order.map((o,p)=>`<button class="it" data-o="${o}" onclick="pickR(${o})"><b class="k">${'abcd'[p]}</b><span class="pic">${[...set[o][0]].slice(1).join('')}</span><span>${set[o][2]}</span></button>`).join('');
+ clearInterval(iv);tick();iv=setInterval(()=>{t--;tick();if(t<=0)timeUp()},1000)}
+function tick(){$('tm').textContent=Math.floor(t/60)+':'+String(t%60).padStart(2,'0');$('fill').style.width=(t/120*100)+'%';$('fill').style.background=t>60?'var(--mint)':t>30?'var(--sun)':'var(--coral)'}
+const Lb=i=>document.querySelector(`#L [data-i="${i}"]`),Rb=o=>document.querySelector(`#R [data-o="${o}"]`);
+function pickL(i){if(locked||Lb(i).disabled)return;document.querySelectorAll('#L .it').forEach(b=>b.classList.remove('sel'));Lb(i).classList.add('sel');sel=i;$('fb').className='';$('fb').innerHTML='Now choose the matching letter (a–d)! 👉'}
+function pickR(o){if(locked||sel===null||Rb(o).disabled){if(sel===null&&!locked)$('fb').innerHTML='Tap a number first 😊';return}
+ const q=D[r][sel],ok=sel===o;lock(sel,o,ok);
+ if(ok){score+=100;$('sc').textContent=score;yay();$('fb').className='good';
+  $('fb').innerHTML=`<span class="big">${GOOD[Math.random()*5|0]} +100</span><br>${q[1]} <b>${q[2]}</b><br>💡 ${q[3]}`}
+ else{aw();$('fb').className='bad';
+  $('fb').innerHTML=`<span class="big">${BAD[Math.random()*4|0]}</span><br>✅ Correct answer: <b>${q[1]} ${q[2]}</b><br>💡 ${q[3]}`}
+ sel=null;if(--left===0){clearInterval(iv);finish()}}
+function lock(i,o,ok){const a=Lb(i),b=Rb(ok?o:i);a.disabled=b.disabled=true;a.classList.remove('sel');
+ a.classList.add(ok?'ok':'no');b.classList.add(ok?'ok':'no');if(!ok){Rb(o).classList.add('no');setTimeout(()=>Rb(o).classList.remove('no'),700)}}
+function timeUp(){clearInterval(iv);locked=true;for(let i=0;i<4;i++)if(!Lb(i).disabled){Lb(i).disabled=Rb(i).disabled=true;Lb(i).classList.add('no');Rb(i).classList.add('no')}
+ aw();$('fb').className='bad';$('fb').innerHTML='<span class="big">Time is up! ⏰ Good effort!</span><br>Look at the red pairs and read them carefully. You will be even faster next round! 💪';finish()}
+function finish(){locked=true;$('nx').textContent=r<4?'Next round ➜':'See my score 🏆';$('nx').classList.remove('hide')}
+function nextRound(){if(r<4){r++;round()}else end()}
+function end(){clearInterval(iv);$('game').classList.add('hide');const e=$('end');e.classList.remove('hide');const s=score>=1800?'🏆 Second Conditional Master!':score>=1200?'🥈 Super Star!':score>=600?'🥉 Rising Star!':'🌱 Keep growing!';
+ e.innerHTML=`<h1>Game Over!</h1><div style="font-size:60px">${s.slice(0,2)}</div><p style="font-size:26px"><b>${score}</b> / 2000 points</p><p>${s}<br>Remember: <b>If + past simple, would + base verb</b></p><button class="btn" onclick="location.reload()">🔁 Play again</button>`;yay()}
+</script></body></html>
